@@ -1,0 +1,13 @@
+
+
+foodie
+
+1. categories (cat_id, cat_title)
+
+2. products (id, title, image, isVeg, price, discount_price, description=NULL, status=true/false, category_id)
+
+
+
+
+
+
