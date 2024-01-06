@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+            $table->string("fullname")->nullable();
+            $table->string("alt_contact")->nullable();
+            $table->foreignId("user_id")->constrained()->onDelete("cascade")->onUpdate("cascade");
+            $table->string("landmark");
+            $table->string("street_name");
+            $table->string("area");
+            $table->string("city");
+            $table->string("state");
+            $table->string("pincode");
+            $table->enum("type", ["o","h"]); //o = office // h = home 
             $table->timestamps();
         });
     }

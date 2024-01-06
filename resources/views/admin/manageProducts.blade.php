@@ -5,13 +5,18 @@
     <div class="container">
         <div class="row mt-4">
             <div class="col-12">
-                <h2 class="display-6">Manage Product ({{count($products)}})</h2>
+                
+                <div class="container">
+                    <h2 class="display-6 float-start">Manage Product ({{count($products)}})</h2>
+
+                <a href="{{route('admin.product.insert')}}" class="btn btn-success float-end  mt-1">Insert Product</a>
+                </div>
 
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>id</th>
-                                    <th>title</th>
+                                    <th>taitle</th>
                                     <th>IsVeg</th>
                                     <th>Price</th>
                                     <th>Image</th>
@@ -49,6 +54,8 @@
                              
                             </tbody>
                         </table>
+
+                        {{$products->links() }}
             </div>
         </div>
     </div>

@@ -31,6 +31,7 @@
             <div class="navbar-nav nav">
                 <a href="{{route("admin.dashboard")}}" class="nav-link nav-item">Home</a>
                 <a href="{{route("admin.category")}}" class="nav-link nav-item">Manage Category</a>
+                <a href="{{route("admin.cart.index")}}" class="nav-link nav-item">Manage Carts</a>
                 <a href="{{route('admin.product.index')}}" class="nav-link nav-item">Manage Products</a>
                 <a href="{{route('admin.product.insert')}}" class="nav-link nav-item">Insert Product</a>
             </div>

@@ -25,6 +25,8 @@
 
                 @auth
                 <a href="" class="nav-link nav-item text-capitalize text-white">{{auth()->user()->name}} </a>
+                <a href="{{route('myOrder')}}" class="nav-link nav-item">My Orders</a>
+
                 <a href="{{route('logout')}}" class="nav-link nav-item">Logout </a>
                 <a href="{{route('cart')}}" class="nav-link nav-item">Cart </a>
                 @endauth

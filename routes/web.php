@@ -22,6 +22,13 @@ Route::middleware("auth")->group(function () {
         Route::get("/add-to-cart/{id}","addToCart")->name("addToCart");
         Route::get("/remove-from-cart/{id}","removeFormCart")->name("removeFormCart");
         Route::get("/cart","cart")->name("cart");
+        Route::get("/my-order","myOrder")->name("myOrder");
+        Route::match(["get","post"],"/checkout","checkout")->name("checkout");
+
+        // paytm payment gateway url
+        Route::post('/payment/start','order')->name('pay.now');
+        Route::post('/payment/status','paymentCallback')->name('status');
+
     });
 });
 
@@ -56,6 +63,12 @@ Route::prefix("admin")->group(function () {
                 Route::get("/edit/{id}", "edit")->name("admin.product.edit");
                 Route::post("/edit/{id}", "update")->name("admin.product.update");
                 Route::delete("/delete/{id}", "removeProduct")->name("admin.product.remove");
+            });
+        });
+
+        Route::controller(OrderController::class)->group(function(){
+            Route::prefix("cart")->group(function(){
+                Route::get("/","manageCarts")->name("admin.cart.index");
             });
         });
     });

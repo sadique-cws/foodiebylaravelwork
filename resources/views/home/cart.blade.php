@@ -74,7 +74,10 @@
                     </span>
                     <span class="list-group-item list-group-item-action display-6 fw-bold text-success">Net Payable
                         <span class="float-end">
-                            ₹{{$net_payable + $delivery_charge}}
+                            ₹{{$total_payable_amount = $net_payable + $delivery_charge}}
+                            @php
+                                session()->flash('amount', $total_payable_amount);
+                            @endphp
                         </span>
                     </span>
                 </div>
@@ -84,7 +87,7 @@
                         <a href="" class="btn btn-dark w-100 btn-lg">Add More</a>
                     </div>
                     <div class="col">
-                        <a href="" class="btn btn-success w-100 btn-lg">Proceed</a>
+                        <a href="{{route('checkout')}}" class="btn btn-success w-100 btn-lg">Proceed</a>
                     </div>
                 </div>
             </div>
